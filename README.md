@@ -171,8 +171,8 @@ The following images provide a step-by-step walkthrough of the user interface fo
 
 ![Home Page](Util/homeLoginPage.png)
 ![Home Page](Util/executingTransaction.png)
-![Home Page](Util/transactionActivity.png)
 ![Home Page](Util/transactionActivityGetData.png)
+![Home Page](Util/transactionActivity.png)
 ![Home Page](Util/transactionSucceed.png)
 ![Home Page](Util/transactionFailNotEnoughFundForNetworkFee.png)
 ![Home Page](Util/transactionFailNotEnoughFundForNetworkFeeNotification.png)
