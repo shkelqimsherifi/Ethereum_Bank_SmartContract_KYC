@@ -92,6 +92,175 @@ function addBank(string memory bankName, uint amount, address bankAddress) publi
 }
 ```
 
+```solidity
+struct UserRegistrationData {
+    string firstName;
+    string middleName;
+    string lastName;
+    string dob;
+    string email;
+    string phone;
+    string maritalStatus;
+    string address_;
+    string city;
+    string state;
+    string country;
+    string zip;
+    string nationality;
+    string occupation;
+    string employmentStatus;
+    uint annualIncome;
+    string idType;
+    string idNumber;
+    string idExpiry;
+}
+
+function registerUser(UserRegistrationData memory data) public onlyOnce {
+    require(bytes(data.firstName).length > 0, "First name is required");
+    require(bytes(data.lastName).length > 0, "Last name is required");
+    require(bytes(data.dob).length > 0, "Date of birth is required");
+    require(bytes(data.email).length > 0, "Email is required");
+    require(bytes(data.phone).length > 0, "Phone number is required");
+    require(bytes(data.address_).length > 0, "Address is required");
+    require(bytes(data.city).length > 0, "City is required");
+    require(bytes(data.state).length > 0, "State is required");
+    require(bytes(data.country).length > 0, "Country is required");
+    require(bytes(data.zip).length > 0, "ZIP code is required");
+    require(bytes(data.idType).length > 0, "ID type is required");
+    require(bytes(data.idNumber).length > 0, "ID number is required");
+
+    users[msg.sender] = User(
+        data.firstName,
+        data.middleName,
+        data.lastName,
+        data.dob,
+        data.email,
+        data.phone,
+        data.maritalStatus,
+        data.address_,
+        data.city,
+        data.state,
+        data.country,
+        data.zip,
+        data.nationality,
+        data.occupation,
+        data.employmentStatus,
+        data.annualIncome,
+        data.idType,
+        data.idNumber,
+        data.idExpiry
+    );
+
+    emit UserRegistered(msg.sender);
+}
+
+function getUser(address _userAddress) public view returns (User memory) {
+    require(_userAddress != address(0), "Invalid address");
+    require(bytes(users[_userAddress].firstName).length > 0, "User does not exist");
+    return users[_userAddress];
+}
+```
+
+```solidity
+function grantKYCPrivilege(address bankAddress) public onlyOwner {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(banks[bankAddress].bankAddress != address(0), "Bank not found");
+    banks[bankAddress].kycPrivilege = true;
+    emit KYCPrivilegeGranted(bankAddress);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+}
+
+function revokeKYCPrivilege(address bankAddress) public onlyOwner {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(banks[bankAddress].bankAddress != address(0), "Bank not found");
+    banks[bankAddress].kycPrivilege = false;
+    emit KYCPrivilegeRevoked(bankAddress);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+}
+```
+
+```solidity
+function addCustomer(string memory custName, bytes32 custData) public {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(bytes(custName).length > 0, "Customer name cannot be empty");
+    require(custData != 0, "Customer data cannot be zero");
+    require(banks[msg.sender].isAllowedToAddCustomer, "Requested Bank is blocked to add new customers");
+    require(customersInfo[custName].validatedBank == address(0), "Requested Customer already exists");
+    customersInfo[custName] = Customer(custName, custData, msg.sender, false);
+    emit CustomerAdded(custName, custData, msg.sender);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+}
+
+function completeKYC(string memory custName) public {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(banks[msg.sender].kycPrivilege, "Requested Bank does not have KYC Privilege");
+    require(customersInfo[custName].validatedBank != address(0), "Requested Customer not found");
+    customersInfo[custName].isKYCCompleted = true;
+    emit KYCCompleted(custName, msg.sender);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+}
+```
+
+```solidity
+function deposit() public payable returns (bool) {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(msg.value > 10 wei, "Please deposit at least 10 wei");
+
+    userbalance[msg.sender] += msg.value;
+    emit Deposit(msg.sender, msg.value);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+
+    return true;
+}
+
+function withdraw(uint256 _amount) public nonReentrant payable returns (bool) {
+    uint256 startGas = gasleft();
+    uint256 startTime = block.timestamp;
+
+    require(_amount <= userbalance[msg.sender], "You do not have sufficient balance");
+    userbalance[msg.sender] -= _amount;
+    payable(msg.sender).transfer(_amount);
+    emit Withdrawal(msg.sender, _amount);
+
+    uint256 gasUsed = startGas - gasleft();
+    uint256 timeTaken = block.timestamp - startTime;
+    emit GasConsumption(gasUsed);
+    emit ElapsedTime(timeTaken);
+
+    return true;
+}
+```
+
 ---
 
 ## System Architecture
