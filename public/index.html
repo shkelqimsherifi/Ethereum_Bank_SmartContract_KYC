@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';"> -->
+    <title>Etherium Bank</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+-->
+        <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .card-body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            color: #007bff;
+        }
+        .card-text {
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Include Web3 library -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Alert Library-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ml-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Bank DApp</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CentralBank.html">Central Bank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ComercialBank.html">Comercial Bank</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="UserBankAccount.html">User Bank Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="KYC.html">KYC</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+          <div class="collapse navbar-collapse ml-2" id="navbarSupportContent">
+            <button class="btn btn-outline-primary" id="connect_to_metamask">
+              <i class="fas fa-sign-in-alt pe-l">LogIN</i>
+            </button>
+          </div>
+
+        </div>
+      </nav>
+      
+      <div class="row justify-content-center">
+        <p>Your Ethereum address is: </p>
+        
+        <span class="ms-auto-text d-none" id="accountaddress"></span>
+      </div>
+
+      <div class="container mt-5">
+        <h1 class="text-center mb-4">Services</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-wallet fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Central Bank</h5>
+                        <p class="card-text">Manage your daily transactions.</p>
+                        <a href="CentralBank.html" class="btn btn-primary mt-auto">Go to Central Bank</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-piggy-bank fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Comercial Bank</h5>
+                        <p class="card-text">Save for the future with savings accounts.</p>
+                        <a href="ComercialBank.html" class="btn btn-primary mt-auto">Go to Comercial Bank</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-hand-holding-usd fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">User Bank Account</h5>
+                        <p class="card-text">Get the financial support you need.</p>
+                        <a href="UserBankAccount.html" class="btn btn-primary mt-auto">Go to User Bank Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    <script src="UserBankAccount.js"></script>
+</body>
+</html>
+

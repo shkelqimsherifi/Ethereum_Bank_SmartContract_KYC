@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';"> -->
+    <title>Bank Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .card-body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            color: #007bff;
+        }
+        .card-text {
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ml-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Bank DApp</a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="CentralBank.html">Central Bank</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ComercialBank.html">Comercial Bank</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserBankAccount.html">User Bank Account</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+              </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+          <div class="collapse navbar-collapse ml-2" id="navbarSupportContent">
+            <button class="btn btn-outline-primary" id="connect_to_metamask">
+              <i class="fas fa-sign-in-alt pe-l">LogIN</i>
+            </button>
+            
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Our Services</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-wallet fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Checking Account</h5>
+                        <p class="card-text">Manage your daily transactions with ease using our checking account services.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-piggy-bank fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Savings Account</h5>
+                        <p class="card-text">Save for the future with our high-interest savings accounts.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-hand-holding-usd fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Loans</h5>
+                        <p class="card-text">Get the financial support you need with our personal and business loan options.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-credit-card fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Credit Cards</h5>
+                        <p class="card-text">Choose from a variety of credit cards that suit your lifestyle and spending habits.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-home fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mortgages</h5>
+                        <p class="card-text">Find the perfect mortgage solution for your new home.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-img-top text-center py-4">
+                        <i class="fas fa-chart-line fa-3x" style="color: #007bff;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Investments</h5>
+                        <p class="card-text">Grow your wealth with our diverse investment options.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
