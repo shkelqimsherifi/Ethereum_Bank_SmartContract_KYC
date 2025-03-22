@@ -167,64 +167,64 @@ The `Util/Plots.py` script generates performance visualizations using `matplotli
 
 The following images provide a step-by-step walkthrough of the user interface for the Ethereum Bank Smart Contract with KYC system. These images demonstrate how users, banks, and administrators interact with the system.
 
-### 1. **Home Page**
-The home page provides an overview of the system, including options for users, banks, and administrators to navigate through the platform.
-
-![Home Page](Util/1.png)
-
----
-
-### 2. **User Registration**
-Users can register by providing detailed personal information required for KYC compliance. This ensures that all users are verified before interacting with the system.
+### 1. **Cetral Bank Dashboard**
+The Central Bank page displays a form to add commercial banks and includes functionalities such as granting KKYC privileges, allowing customer addition, revoking KYC privileges, and blocking customer addition.
 
 ![User Registration](Util/2.png)
 
 ---
 
-### 3. **Bank Dashboard**
+### 2. **Get Bank Data**
+The "Get Bank Data" page is linked to a function that retrieves data about registered commercial banks based on the address of the bank.
+
+![Home Page](Util/1.png)
+
+---
+
+### 3. **Comercial Bank Dashboard**
 The bank dashboard allows commercial banks to manage their accounts, add customers, and perform KYC operations.
 
 ![Bank Dashboard](Util/3.png)
 
 ---
 
-### 4. **Add Bank**
-The central bank can add new commercial banks to the system. This feature ensures that only authorized banks can operate within the platform.
+### 4. **Get KYC Data and Customer Data**
+This form allows the retrieval of KYC data by providing the user's address. The subsequent form, by specifying the customer's name, enables the acquisition of customer data.
 
 ![Add Bank](Util/4.png)
 
 ---
 
-### 5. **Add Customer**
-Commercial banks can add new customers to their database. This step involves storing customer data securely on the blockchain.
+### 5. **Add Personal KYC Data**
+This form specifies the necessary fields to add customer personal KYC data.
 
 ![Add Customer](Util/5.png)
 
 ---
 
-### 6. **Complete KYC**
-Banks can complete the KYC process for their customers. This ensures that customers are verified and eligible to perform transactions.
+### 6. **Add Address KYC Data**
+This form specifies the necessary fields to add customer address KYC data.
 
 ![Complete KYC](Util/6.png)
 
 ---
 
-### 7. **Deposit Funds**
-Users can deposit funds into their accounts. The system ensures secure and transparent transactions.
+### 7. **Add Additional KYC Data**
+This form specifies the necessary fields to add customer additional KYC data.
 
 ![Deposit Funds](Util/7.png)
 
 ---
 
-### 8. **Withdraw Funds**
-Users can withdraw funds from their accounts. The system validates the user's balance and ensures secure withdrawals.
+### 8. **Add Identification KYC Data**
+This form specifies the necessary fields to add customer identification KYC data.
 
 ![Withdraw Funds](Util/8.png)
 
 ---
 
-### 9. **Transaction History**
-Users and banks can view the transaction history, including deposits, withdrawals, and KYC updates. This ensures transparency and accountability.
+### 9. **Get KYC Data**
+This form allows the retrieval of KYC data by providing the user's address.
 
 ![Transaction History](Util/9.png)
 
