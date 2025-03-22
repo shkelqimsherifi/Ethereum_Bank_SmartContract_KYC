@@ -167,66 +167,76 @@ The `Util/Plots.py` script generates performance visualizations using `matplotli
 
 The following images provide a step-by-step walkthrough of the user interface for the Ethereum Bank Smart Contract with KYC system. These images demonstrate how users, banks, and administrators interact with the system.
 
-### 1. **Cetral Bank Dashboard**
+### 1. **Home Page**
+
+![Home Page](Util/homeLoginPage.png)
+![Home Page](Util/executingTransaction.png)
+![Home Page](Util/transactionActivity.png)
+![Home Page](Util/transactionActivityGetData.png)
+![Home Page](Util/transactionSucceed.png)
+![Home Page](Util/transactionFailNotEnoughFundForNetworkFee.png)
+![Home Page](Util/transactionFailNotEnoughFundForNetworkFeeNotification.png)
+
+### 1. **Central Bank Dashboard**
 The Central Bank page displays a form to add commercial banks and includes functionalities such as granting KKYC privileges, allowing customer addition, revoking KYC privileges, and blocking customer addition.
 
-![User Registration](Util/2.png)
+![Central Bank Dashboard](Util/2.png)
 
 ---
 
 ### 2. **Get Bank Data**
 The "Get Bank Data" page is linked to a function that retrieves data about registered commercial banks based on the address of the bank.
 
-![Home Page](Util/1.png)
+![Get Bank Data](Util/1.png)
 
 ---
 
 ### 3. **Comercial Bank Dashboard**
 The bank dashboard allows commercial banks to manage their accounts, add customers, and perform KYC operations.
 
-![Bank Dashboard](Util/3.png)
+![Comercial Bank Dashboard](Util/3.png)
 
 ---
 
 ### 4. **Get KYC Data and Customer Data**
 This form allows the retrieval of KYC data by providing the user's address. The subsequent form, by specifying the customer's name, enables the acquisition of customer data.
 
-![Add Bank](Util/4.png)
+![Get KYC Data](Util/4.png)
 
 ---
 
 ### 5. **Add Personal KYC Data**
 This form specifies the necessary fields to add customer personal KYC data.
 
-![Add Customer](Util/5.png)
+![KYC Data](Util/5.png)
 
 ---
 
 ### 6. **Add Address KYC Data**
 This form specifies the necessary fields to add customer address KYC data.
 
-![Complete KYC](Util/6.png)
+![KYC Data](Util/6.png)
 
 ---
 
 ### 7. **Add Additional KYC Data**
 This form specifies the necessary fields to add customer additional KYC data.
 
-![Deposit Funds](Util/7.png)
+![KYC Data](Util/7.png)
 
 ---
 
 ### 8. **Add Identification KYC Data**
 This form specifies the necessary fields to add customer identification KYC data.
 
-![Withdraw Funds](Util/8.png)
+![KYC Data](Util/8.png)
 
 ---
 
 ### 9. **Get KYC Data**
 This form allows the retrieval of KYC data by providing the user's address.
 
-![Transaction History](Util/9.png)
+![KYC Data](Util/9.png)
 
 ---
 
