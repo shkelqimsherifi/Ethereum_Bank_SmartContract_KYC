@@ -9,11 +9,12 @@ This project implements a decentralized banking system on the Ethereum blockchai
 2. [Features](#features)
 3. [Smart Contract Explanation](#smart-contract-explanation)
 4. [System Architecture](#system-architecture)
-5. [Performance Analysis](#performance-analysis)
-6. [How to Use](#how-to-use)
-7. [Visualizations](#visualizations)
-8. [User Interface (UI) Walkthrough](#user-interface-ui-walkthrough)
-9. [License](#license)
+5. [Diagrams](#diagrams)
+6. [Performance Analysis](#performance-analysis)
+7. [How to Use](#how-to-use)
+8. [Visualizations](#visualizations)
+9. [User Interface (UI) Walkthrough](#user-interface-ui-walkthrough)
+10. [License](#license)
 
 ---
 
@@ -281,6 +282,39 @@ The system is divided into three main layers:
 
 The contract ensures that only authorized entities can perform specific actions, using modifiers like `onlyOwner` and `nonReentrant`.
 
+---
+
+## Diagrams
+
+This section provides an overview of the diagrams used in the project to explain the blockchain structure, system architecture, and other key concepts.
+
+### 1. **Block Structure in Blockchain**
+![Block Structure in Blockchain](Util/Diagrams/block_structure_blockchain(2).png)
+- **Description**: This diagram illustrates the structure of a block in the blockchain. It includes components such as the block header, transactions, and metadata. The block header contains the hash of the previous block, ensuring the immutability of the blockchain.
+
+### 2. **Traditional KYC Process**
+![Traditional KYC Process](Util/Diagrams/TraditionalKYCProcess.png)
+- **Description**: This diagram illustrates traditiona KYC process.
+
+### 3. **Web Based KYC Process**
+![Traditional KYC Process](Util/Diagrams/WebBasedKYCProcess.png)
+- **Description**: This diagram illustrates web base KYC process.
+
+### 4. **Non Blockchain KYC Process**
+![Traditional KYC Process](Util/Diagrams/NonBlockchainBasedKYCProcess.png)
+- **Description**: This diagram illustrates Non Blockchain KYC process.
+
+### 5. **Blockchain KYC Process**
+![Traditional KYC Process](Util/Diagrams/BlockchainBasedKYCProcess.png)
+- **Description**: This diagram illustrates Blockchain KYC process.
+
+### 6. **Blockchain Based Bank DAPP**
+![Traditional KYC Process](Util/Diagrams/BlockchainBasedBankDAPP.png)
+- **Description**: This diagram illustrates Blockchain Base Bank DAPP.
+
+### 7. **Blockchain Based Bank DAPP Sequential Diagram**
+![Traditional KYC Process](Util/Diagrams/BlockchainBasedBankDAPPSequentialDiagram.png)
+- **Description**: This diagram illustrates Blockchain Base Bank DAPP Sequential Diagram .
 ---
 
 ## Performance Analysis
